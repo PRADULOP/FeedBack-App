@@ -17,7 +17,7 @@ const AddFeedback = () => {
    
   const updateValue = ()=>{
     if(location.state!=null){
-      axios.put(`http://localhost:8000/feedback/update/${location.state.val._id}`,feedback).then((res)=>{
+      axios.put(`/api/feedback/update/${location.state.val._id}`,feedback).then((res)=>{
         alert(res.data.message)
         navigate('/')
       }).catch((error)=>{
@@ -34,7 +34,7 @@ const AddFeedback = () => {
         alert("Please fill in all fields before submitting.");
         return; 
       }
-      axios.post('http://localhost:8000/feedback/add',feedback).then((res)=>{
+      axios.post('/api/feedback/add',feedback).then((res)=>{
         alert(res.data.message)
         navigate('/')
     }).catch((error)=>{
