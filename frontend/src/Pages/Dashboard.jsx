@@ -9,7 +9,7 @@ const Dashboard = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get('http://localhost:8000/feedback').then((res)=>{
+    axios.get('/api/feedback').then((res)=>{
       setFeedbacks(res.data)
     }).catch((error)=>{
       console.log(error)
@@ -20,7 +20,7 @@ const Dashboard = () => {
   }
 
   const handleDelete = (val) => {
-    axios.delete(`http://localhost:8000/feedback/delete/${val._id}`).then((res)=>{
+    axios.delete(`/api/feedback/delete/${val._id}`).then((res)=>{
       alert(res.data.message)
       setFeedbacks(feedbacks.filter(item=>item._id!=val._id));
     }).catch((error)=>{
