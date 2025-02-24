@@ -1,0 +1,9 @@
+body {
+  background-image: url('../public/5630939.jpg');
+  background-size: cover;
+}
+
+.textField{
+  background-color: white;
+  border-radius: 5px;
+}
